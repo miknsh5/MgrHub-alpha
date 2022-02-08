@@ -1,18 +1,19 @@
+
+
 <template>
   <img alt="Vue logo" src="./assets/os-logo-300.png">
-  <HelloWorld msg="Hi. Welcome to Ongoing Schemes."/>
+  <div id="app">
+    <div id="nav">
+      <router-link :to="{ name: 'Purpose' }">Purpose</router-link> |
+      <router-link :to="{ name: 'About' }">Team</router-link> |
+      <router-link :to="{ name: 'About' }">Ops</router-link> |
+      <router-link :to="{ name: 'About' }">Analytics</router-link>
+    </div>
+    
+    
+    <router-view />
+  </div>
 </template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
 
 <style>
 #app {
@@ -21,6 +22,22 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
+
+h4 {
+  font-size: 20px;
 }
 </style>
